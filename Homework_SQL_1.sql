@@ -37,7 +37,7 @@ where name like '%8';
 
  --12. ¬ывести пользователей где в имени есть буква а
 select * from students
-where name like 'A%' or name like '%a' or name like '%a%';
+where name like '%a%';
 
  --13. ¬ывести пользователей которые были созданы 2021-07-12 00:00:00
 select * from students
@@ -49,7 +49,7 @@ where created_on = '2021-07-12 00:00:00' and "password" = '1m313';
 
  --15. ¬ывести пользователей которые были созданы 2021-07-12 00:00:00 и у которых в имени есть слово Andrey
 select * from students
-where created_on = '2021-07-12 00:00:00' and "name" like 'Andrey%';
+where created_on = '2021-07-12 00:00:00' and "name" like '%Andrey%';
 
  --16. ¬ывести пользователей которые были созданы 2021-07-12 00:00:00 и у которых в имени есть цифра 8
 select * from students
@@ -100,13 +100,11 @@ select * from students
 where created_on ='2020-10-03 00:00:00' or created_on ='2021-05-19 00:00:00' or created_on ='2021-03-26 00:00:00';
 
  --28. ¬ывести минимальный id 
-select id from students
-order by id limit 1;
+select min(id) from students;
 
 
  --29. ¬ывести максимальный.
-select id from students
-order by id desc limit 1;
+select max(id) from students;
 
  --30. ¬ывести количество пользователей
 select count(*) as количество from students;
